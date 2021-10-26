@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
@@ -27,7 +28,9 @@ const Register = () => {
           <Form.Label>Organize books at the library</Form.Label>
           <Form.Control type="text" placeholder="Organize books and library" />
         </Form.Group>
-        <Button className="w-100">Register</Button>
+        <Button className="w-100 mb-2">Register</Button>
+        <br />
+        <Link to="/login">if have an account?</Link>
       </Form>
     </div>
   );
