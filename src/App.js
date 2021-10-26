@@ -9,39 +9,42 @@ import Blog from "./components/Blog/Blog";
 import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
 import LogIn from "./components/LogIn/LogIn";
+import AuthProvider from "./contexts/AuthProvider";
 
 function App() {
   return (
     <>
-      <Router>
-        <NavBar></NavBar>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/donation">
-            <Donation></Donation>
-          </Route>
-          <Route path="/events">
-            <Events></Events>
-          </Route>
-          <Route path="/blog">
-            <Blog></Blog>
-          </Route>
-          <Route path="/login">
-            <LogIn></LogIn>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <NavBar></NavBar>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/donation">
+              <Donation></Donation>
+            </Route>
+            <Route path="/events">
+              <Events></Events>
+            </Route>
+            <Route path="/blog">
+              <Blog></Blog>
+            </Route>
+            <Route path="/login">
+              <LogIn></LogIn>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </>
   );
 }
