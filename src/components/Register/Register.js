@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div>
       <Form className="border rounded p-4 mx-auto" style={{ width: 450 }}>
-        <h3>Register as a Volunteer</h3>
+        <h3 className="text-primary">Register as a Volunteer</h3>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Full Name" />

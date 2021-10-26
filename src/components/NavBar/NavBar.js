@@ -12,6 +12,7 @@ const NavBar = () => {
           <Navbar.Brand href="#home">
             <img className="logo" src={logo} alt="" />
           </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
           <Nav className="ms-auto">
             <NavLink className="nav-link" to="/home">
               Home
