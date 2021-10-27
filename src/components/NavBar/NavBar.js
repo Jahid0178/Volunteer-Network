@@ -3,8 +3,11 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import "./NavBar.css";
 import logo from "../../images/logo.png";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const NavBar = () => {
+  const { user, handleSignOut } = useAuth();
+
   return (
     <div>
       <Navbar bg="light" variant="light">
@@ -26,6 +29,18 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/blog">
               Blog
             </NavLink>
+            <Link to="/addEvent">
+              <Button className="me-2">Add Event</Button>
+            </Link>
+            {!user.email ? (
+              <Link to="/login">
+                <Button className="me-2">Login</Button>
+              </Link>
+            ) : (
+              <Button onClick={() => handleSignOut()} className="me-2">
+                Log Out
+              </Button>
+            )}
             <Link to="/register">
               <Button>Register</Button>
             </Link>

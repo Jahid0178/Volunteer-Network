@@ -29,8 +29,6 @@ const Register = () => {
           <Form.Control type="text" placeholder="Organize books and library" />
         </Form.Group>
         <Button className="w-100 mb-2">Register</Button>
-        <br />
-        <Link to="/login">if have an account?</Link>
       </Form>
     </div>
   );

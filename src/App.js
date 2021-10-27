@@ -10,6 +10,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
 import LogIn from "./components/LogIn/LogIn";
 import AuthProvider from "./contexts/AuthProvider";
+import AddEvents from "./components/AddEvents/AddEvents";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/blog">
               <Blog></Blog>
+            </Route>
+            <Route path="/addEvent">
+              <AddEvents></AddEvents>
             </Route>
             <Route path="/login">
               <LogIn></LogIn>

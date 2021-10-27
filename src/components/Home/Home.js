@@ -1,8 +1,21 @@
-import React from "react";
-import { Container, FormControl, InputGroup, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import {
+  Container,
+  FormControl,
+  InputGroup,
+  Button,
+  Row,
+} from "react-bootstrap";
+import ShowEvents from "../ShowEvents/ShowEvents";
 import "./Home.css";
 
 const Home = () => {
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/events")
+      .then((res) => res.json())
+      .then((data) => setEvents(data));
+  }, []);
   return (
     <div>
       <Container>
@@ -11,6 +24,11 @@ const Home = () => {
           <FormControl placeholder="Search" aria-label="Search" />
           <Button variant="primary">Search</Button>
         </InputGroup>
+        <Row>
+          {events.map((event) => (
+            <ShowEvents key={event._id} event={event}></ShowEvents>
+          ))}
+        </Row>
       </Container>
     </div>
   );

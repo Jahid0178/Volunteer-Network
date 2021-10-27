@@ -1,4 +1,9 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import { useState } from "react";
 import initializeAuthentication from "../firebase/firebase.init";
 
@@ -9,8 +14,10 @@ const useFirebase = () => {
   const [error, setError] = useState("");
   const auth = getAuth();
 
+  // Providers
   const googleProvider = new GoogleAuthProvider();
 
+  // google sign in
   const signInUsingGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -22,10 +29,21 @@ const useFirebase = () => {
         setError(errorMessage);
       });
   };
+  // sign out user
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUser({});
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return {
     signInUsingGoogle,
     user,
     error,
+    handleSignOut,
   };
 };
 
