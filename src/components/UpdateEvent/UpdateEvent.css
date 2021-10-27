@@ -1,0 +1,12 @@
+.update-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.update-container form input,
+textarea {
+  width: 50%;
+  margin: 5px 0;
+}

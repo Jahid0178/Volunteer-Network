@@ -1,11 +1,11 @@
 import { Card, Col, Button } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./ShowEvents.css";
 
 const ShowEvents = (props) => {
   const history = useHistory();
   const { title, imageLink, _id } = props.event;
-  const handleEventUpdate = (id) => {
+  const handleEventUpdate = () => {
     history.push(`/updateEvent/${_id}`);
   };
   return (

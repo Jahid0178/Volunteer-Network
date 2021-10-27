@@ -63,8 +63,13 @@ const AddEvents = () => {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control ref={textMessageRef} as="textarea" rows={3} />
+                <Form.Label>Description</Form.Label>
+                <Form.Control
+                  ref={textMessageRef}
+                  as="textarea"
+                  rows={3}
+                  placeholder="Description"
+                />
               </Form.Group>
             </Col>
 
