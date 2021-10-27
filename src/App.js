@@ -11,6 +11,7 @@ import Register from "./components/Register/Register";
 import LogIn from "./components/LogIn/LogIn";
 import AuthProvider from "./contexts/AuthProvider";
 import AddEvents from "./components/AddEvents/AddEvents";
+import UpdateEvent from "./components/UpdateEvent/UpdateEvent";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             </Route>
             <Route path="/addEvent">
               <AddEvents></AddEvents>
+            </Route>
+            <Route path="/updateEvent/:id">
+              <UpdateEvent></UpdateEvent>
             </Route>
             <Route path="/login">
               <LogIn></LogIn>
